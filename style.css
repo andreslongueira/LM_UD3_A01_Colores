@@ -1,98 +1,134 @@
-(function(){
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+body {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh 80vh 10vh;
 
-    var actualizarHora=function(){
+}
 
-        var reloj = new Date(),
-            horas = reloj.getHours(),
-            ampm,
-            minutos = reloj.getMinutes(),
-            segundos = reloj.getSeconds();
-            
-
-        var phoras = document.getElementById('horas'),
-            pminutos = document.getElementById('minutos'),
-            psegundos = document.getElementById('segundos'),
-            pampm = document.getElementById('ampm');
-
-            if(horas >= 12){
-                horas = horas - 12;
-                ampm = 'PM';
-            }
-            else{
-                ampm = 'AM';
-            }
-
-            if(horas == 0){
-                horas = 12;
-            }
-            phoras.textContent = horas;
-            pampm.textContent = ampm;
-
-            if(minutos < 10){
-                minutos = '0' + minutos;
-            }
-
-            if(segundos < 10){
-                segundos = '0' + segundos;
-            }
-            
-            pminutos.textContent = minutos;
-            psegundos.textContent = segundos;
-            
-
-    };
-
-    actualizarHora();
-    var intervalo = setInterval(actualizarHora, 1000);
-
-}())
-
-function cambiaColor(id){
-
-    var color= [];
-    color.push("#4a235a");
-    color.push("#1a5276");
-    color.push("#2874a6");
-    color.push("#148f77");
-    color.push("#138d75");
-    color.push("#f5b041");
-    color.push("#00FF00");
-    color.push("#0000FF");
-    color.push("#FF0000");
-    color.push("#00FFFF");
-
-    var todosIguales = 0;
-
-    var aleatorio = Math.round(Math.random()*9);
-    document.getElementById(id).style.backgroundColor = color[aleatorio];4
-
-
-    var sum = 0;
-    var bloques =[]
-    bloque= document.getElementById(bloque1).style.background;
-    bloque= document.getElementById(bloque2).style.background;
-    bloque= document.getElementById(bloque3).style.background;
-    bloque= document.getElementById(bloque4).style.background;
-    bloque= document.getElementById(bloque5).style.background;
-    bloque= document.getElementById(bloque6).style.background;
-    bloque= document.getElementById(bloque7).style.background;
-    bloque= document.getElementById(bloque8).style.background;
-    bloque= document.getElementById(bloque9).style.background;
-    bloque= document.getElementById(bloque10).style.background;
-
-for (let index = 0; index < bloques.length - 1; index++) {
-    
-    if(bloques[index] == bloques[index]){
-        sum++;
-    }
-    if(index == 8){
-        if(bloques[9] == bloques[0]){
-            sum++;
-        }
-    }
-    if(sum == 9){
-        alert("asdfghjklñ");
-    }
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1;
+    grid-column: 1;
+    background-color: #0E0E0E;
+    color: white;
+    font-size: 25px;
     
 }
+.bloques{
+    display: grid;
+    grid-template-columns: auto 19vw 19vw 19vw 19vw 19vw auto;
+    grid-template-rows: auto 24vh 24vh auto;
+    grid-gap: 0.5vh 0.5vw;
+    padding: 1vw;
+}
+#bloque1{
+    grid-row: 2;
+    grid-column: 2 / 3 ;
+    border-radius: 20px;
+    background-color: red;
+}
+#bloque2{
+    
+    grid-row: 2;
+    grid-column: 3 / 4 ;
+    border-radius: 20px;
+    background-color: red;
+}
+#bloque3{
+    border-radius: 20px;
+    grid-row: 2;
+    grid-column: 4 / 5 ;
+    background-color: red;
+}
+#bloque4{
+    border-radius: 20px;
+    grid-row: 2;
+    grid-column: 5 / 6 ;
+    background-color: red;
+}
+#bloque5{
+    border-radius: 20px;
+    grid-row: 2;
+    grid-column: 6 / 7 ;
+    background-color: red;
+}
+
+#bloque6{
+    border-radius: 20px;
+    grid-row: 3;
+    grid-column: 2 / 3 ;
+    background-color: red;
+}
+#bloque7{
+    border-radius: 20px;
+    grid-row: 3;
+    grid-column: 3 / 4 ;
+    background-color: red;
+}
+#bloque8{
+    border-radius: 20px;
+    grid-row: 3;
+    grid-column: 4 / 5 ;
+    background-color: red;
+}
+#bloque9{
+    border-radius: 20px;
+
+    grid-row: 3;
+    grid-column: 5 / 6 ;
+    background-color: red;
+}
+#bloque10{
+    border-radius: 20px;
+    grid-row: 3;
+    grid-column: 6 / 7 ;
+    background-color: red;
+}
+
+
+footer{
+    grid-row-start: 3;
+    grid-column: 1;
+
+}
+
+
+
+
+
+.container{
+    background-color: #0E0E0E;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    justify-content: center;
+}
+
+.reloj{
+    background-color: #F27878;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    align-items: center;
+    color: white;
+}
+
+
+.cajita p{
+    font-size: 25px;
+    text-align: center;
+    color: white;
 }
