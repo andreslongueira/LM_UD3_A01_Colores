@@ -1,0 +1,101 @@
+body {
+    display: grid;
+    grid-template-columns: 100vw;
+    grid-template-rows: 10vh 80vh 10vh;
+
+}
+
+header{
+    grid-row: 1;
+    grid-column: 1;
+    background-color: aqua;
+}
+.bloques{
+    display: grid;
+    grid-template-columns: auto 19vw 19vw 19vw 19vw 19vw auto;
+    grid-template-rows: 24vh 24vh 24vh 24vh;
+    grid-column-gap: 1vw;
+    grid-row-gap: 1vw;
+
+}
+#bloque1{
+    grid-row: 2;
+    grid-column: 2 / 3 ;
+    background-color: red;
+}
+#bloque2{
+    grid-row: 2;
+    grid-column: 3 / 4 ;
+    background-color: red;
+}
+#bloque3{
+    grid-row: 2;
+    grid-column: 4 / 5 ;
+    background-color: red;
+}
+#bloque4{
+    grid-row: 2;
+    grid-column: 5 / 6 ;
+    background-color: red;
+}
+#bloque5{
+    grid-row: 2;
+    grid-column: 6 / 7 ;
+    background-color: red;
+}
+
+#bloque6{
+    grid-row: 3;
+    grid-column: 2 / 3 ;
+    background-color: red;
+}
+#bloque7{
+    grid-row: 3;
+    grid-column: 3 / 4 ;
+    background-color: red;
+}
+#bloque8{
+    grid-row: 3;
+    grid-column: 4 / 5 ;
+    background-color: red;
+}
+#bloque9{
+    grid-row: 3;
+    grid-column: 5 / 6 ;
+    background-color: red;
+}
+#bloque10{
+    grid-row: 3;
+    grid-column: 6 / 7 ;
+    background-color: red;
+}
+
+
+footer{
+    grid-row-start: 3;
+    grid-column: 1;
+
+}
+
+
+
+
+
+.container{
+    background-color: aquamarine;
+    display: flex;
+    width: 100%;
+}
+
+.reloj{
+    text-align: center;
+    display: flex;
+    font-size: 80px;
+    align-items: center;
+}
+
+
+.cajita p{
+    font-size: 25px;
+    text-align: center;
+}
