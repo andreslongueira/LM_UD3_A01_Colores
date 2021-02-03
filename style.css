@@ -1,101 +1,98 @@
-body {
-    display: grid;
-    grid-template-columns: 100vw;
-    grid-template-rows: 10vh 80vh 10vh;
+(function(){
 
-}
+    var actualizarHora=function(){
 
-header{
-    grid-row: 1;
-    grid-column: 1;
-    background-color: aqua;
-}
-.bloques{
-    display: grid;
-    grid-template-columns: auto 19vw 19vw 19vw 19vw 19vw auto;
-    grid-template-rows: 24vh 24vh 24vh 24vh;
-    grid-column-gap: 1vw;
-    grid-row-gap: 1vw;
+        var reloj = new Date(),
+            horas = reloj.getHours(),
+            ampm,
+            minutos = reloj.getMinutes(),
+            segundos = reloj.getSeconds();
+            
 
-}
-#bloque1{
-    grid-row: 2;
-    grid-column: 2 / 3 ;
-    background-color: red;
-}
-#bloque2{
-    grid-row: 2;
-    grid-column: 3 / 4 ;
-    background-color: red;
-}
-#bloque3{
-    grid-row: 2;
-    grid-column: 4 / 5 ;
-    background-color: red;
-}
-#bloque4{
-    grid-row: 2;
-    grid-column: 5 / 6 ;
-    background-color: red;
-}
-#bloque5{
-    grid-row: 2;
-    grid-column: 6 / 7 ;
-    background-color: red;
-}
+        var phoras = document.getElementById('horas'),
+            pminutos = document.getElementById('minutos'),
+            psegundos = document.getElementById('segundos'),
+            pampm = document.getElementById('ampm');
 
-#bloque6{
-    grid-row: 3;
-    grid-column: 2 / 3 ;
-    background-color: red;
-}
-#bloque7{
-    grid-row: 3;
-    grid-column: 3 / 4 ;
-    background-color: red;
-}
-#bloque8{
-    grid-row: 3;
-    grid-column: 4 / 5 ;
-    background-color: red;
-}
-#bloque9{
-    grid-row: 3;
-    grid-column: 5 / 6 ;
-    background-color: red;
-}
-#bloque10{
-    grid-row: 3;
-    grid-column: 6 / 7 ;
-    background-color: red;
-}
+            if(horas >= 12){
+                horas = horas - 12;
+                ampm = 'PM';
+            }
+            else{
+                ampm = 'AM';
+            }
+
+            if(horas == 0){
+                horas = 12;
+            }
+            phoras.textContent = horas;
+            pampm.textContent = ampm;
+
+            if(minutos < 10){
+                minutos = '0' + minutos;
+            }
+
+            if(segundos < 10){
+                segundos = '0' + segundos;
+            }
+            
+            pminutos.textContent = minutos;
+            psegundos.textContent = segundos;
+            
+
+    };
+
+    actualizarHora();
+    var intervalo = setInterval(actualizarHora, 1000);
+
+}())
+
+function cambiaColor(id){
+
+    var color= [];
+    color.push("#4a235a");
+    color.push("#1a5276");
+    color.push("#2874a6");
+    color.push("#148f77");
+    color.push("#138d75");
+    color.push("#f5b041");
+    color.push("#00FF00");
+    color.push("#0000FF");
+    color.push("#FF0000");
+    color.push("#00FFFF");
+
+    var todosIguales = 0;
+
+    var aleatorio = Math.round(Math.random()*9);
+    document.getElementById(id).style.backgroundColor = color[aleatorio];4
 
 
-footer{
-    grid-row-start: 3;
-    grid-column: 1;
+    var sum = 0;
+    var bloques =[]
+    bloque= document.getElementById(bloque1).style.background;
+    bloque= document.getElementById(bloque2).style.background;
+    bloque= document.getElementById(bloque3).style.background;
+    bloque= document.getElementById(bloque4).style.background;
+    bloque= document.getElementById(bloque5).style.background;
+    bloque= document.getElementById(bloque6).style.background;
+    bloque= document.getElementById(bloque7).style.background;
+    bloque= document.getElementById(bloque8).style.background;
+    bloque= document.getElementById(bloque9).style.background;
+    bloque= document.getElementById(bloque10).style.background;
 
+for (let index = 0; index < bloques.length - 1; index++) {
+    
+    if(bloques[index] == bloques[index]){
+        sum++;
+    }
+    if(index == 8){
+        if(bloques[9] == bloques[0]){
+            sum++;
+        }
+    }
+    if(sum == 9){
+        alert("asdfghjklñ");
+    }
+    
 }
-
-
-
-
-
-.container{
-    background-color: aquamarine;
-    display: flex;
-    width: 100%;
-}
-
-.reloj{
-    text-align: center;
-    display: flex;
-    font-size: 80px;
-    align-items: center;
-}
-
-
-.cajita p{
-    font-size: 25px;
-    text-align: center;
 }
