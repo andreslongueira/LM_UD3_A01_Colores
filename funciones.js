@@ -48,52 +48,69 @@
 }())
 
 function cambiaColor(id){
+    let sum= 0;
+    var colores = [];
+    colores.push(document.getElementById("bloque1").style.backgroundColor);
+    colores.push(document.getElementById("bloque2").style.backgroundColor);
+    colores.push(document.getElementById("bloque3").style.backgroundColor);
+    colores.push(document.getElementById("bloque4").style.backgroundColor);
+    colores.push(document.getElementById("bloque5").style.backgroundColor);
+    colores.push(document.getElementById("bloque6").style.backgroundColor);
+    colores.push(document.getElementById("bloque7").style.backgroundColor);
+    colores.push(document.getElementById("bloque8").style.backgroundColor);
+    colores.push(document.getElementById("bloque9").style.backgroundColor);
+    colores.push(document.getElementById("bloque10").style.backgroundColor);
 
-    var color= [];
-    color.push("#4a235a");
-    color.push("#1a5276");
-    color.push("#2874a6");
-    color.push("#148f77");
-    color.push("#138d75");
-    color.push("#f5b041");
-    color.push("#00FF00");
-    color.push("#0000FF");
-    color.push("#FF0000");
-    color.push("#00FFFF");
-
-    var todosIguales = 0;
-
-    var aleatorio = Math.round(Math.random()*9);
-    document.getElementById(id).style.backgroundColor = color[aleatorio];4
-
-
-    var sum = 0;
-    var bloques =[]
-    bloque= document.getElementById(bloque1).style.background;
-    bloque= document.getElementById(bloque2).style.background;
-    bloque= document.getElementById(bloque3).style.background;
-    bloque= document.getElementById(bloque4).style.background;
-    bloque= document.getElementById(bloque5).style.background;
-    bloque= document.getElementById(bloque6).style.background;
-    bloque= document.getElementById(bloque7).style.background;
-    bloque= document.getElementById(bloque8).style.background;
-    bloque= document.getElementById(bloque9).style.background;
-    bloque= document.getElementById(bloque10).style.background;
-
-for (let index = 0; index < bloques.length - 1; index++) {
-    
-    if(bloques[index] == bloques[index]){
+    /*for (let i = 0; i<colores.length; i++){
+    if(colores[i] == colores[i + 1]){
         sum++;
+    }}
+
+    if (sum == 9){
+        alert("Todos son iguales")
     }
-    if(index == 8){
-        if(bloques[9] == bloques[0]){
-            sum++;
+    */
+var iguales = false;
+    
+    document.getElementById(id).style.backgroundColor = color[Math.round(Math.random() * 9)];
+    if (document.getElementById('bloque1').style.backgroundColor == document.getElementById('bloque2').style.backgroundColor) {
+        if (document.getElementById('bloque2').style.backgroundColor == document.getElementById('bloque3').style.backgroundColor) {
+            if (document.getElementById('bloque3').style.backgroundColor == document.getElementById('bloque4').style.backgroundColor) {
+                if (document.getElementById('bloque4').style.backgroundColor == document.getElementById('bloque5').style.backgroundColor) {
+                    if (document.getElementById('bloque5').style.backgroundColor == document.getElementById('bloque6').style.backgroundColor) {
+                        if (document.getElementById('bloque6').style.backgroundColor == document.getElementById('bloque7').style.backgroundColor) {
+                            if (document.getElementById('bloque7').style.backgroundColor == document.getElementById('bloque8').style.backgroundColor) {
+                                if (document.getElementById('bloque8').style.backgroundColor == document.getElementById('bloque9').style.backgroundColor) {
+                                    if (document.getElementById('bloque9').style.backgroundColor == document.getElementById('bloque10').style.backgroundColor) {
+                                        if (document.getElementById('bloque10').style.backgroundColor == document.getElementById('bloque1').style.backgroundColor) {
+                                            iguales=true;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
-    if(sum == 9){
-        alert("asdfghjklñ");
+    if(iguales){
+        alert("Son todos iguales!")
     }
-    
-}
 }
 
+
+
+
+
+var color= [];
+color.push("#4a235a");
+color.push("#6D0863");
+color.push("#2874a6");
+color.push("#148f77");
+color.push("#138d75");
+color.push("#f5b041");
+color.push("#00FF00");
+color.push("#0000FF");
+color.push("#FF0000");
+color.push("#00FFFF");
